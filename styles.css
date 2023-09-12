@@ -1,0 +1,17 @@
+.tabs {
+  display: flex;
+}
+
+.tab {
+  width: 100px;
+  text-align: center;
+  padding: 1em;
+  vertical-align: middle;
+  display: table-cell;
+  border: 1px solid black;
+}
+
+.tab.active {
+  background-color: black;
+  color: #fff;
+}
