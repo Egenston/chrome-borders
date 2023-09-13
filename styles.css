@@ -1,17 +1,53 @@
 .tabs {
   display: flex;
+
+  background-color: black;
 }
 
 .tab {
+  background-color: black;
+  color: white;
+  position: relative;
   width: 100px;
   text-align: center;
   padding: 1em;
   vertical-align: middle;
   display: table-cell;
-  border: 1px solid black;
+  border-bottom: 3px solid orange;
 }
 
 .tab.active {
-  background-color: black;
-  color: #fff;
+  background-color: white;
+  color: black;
+  border: 3px solid orange;
+  border-bottom: none;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.tab.active::before,
+.tab.tab.active::after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 0;
+  height: 50%;
+  width: 20%;
+  z-index: 10;
+}
+
+.tab.active::before {
+  right: 100%;
+  border-right: 3px solid orange;
+  border-bottom: 3px solid orange;
+  border-bottom-right-radius: 20px;
+  box-shadow: 10px 10px 0px white;
+}
+
+.tab.active::after {
+  left: 100%;
+  border-left: 3px solid orange;
+  border-bottom: 3px solid orange;
+  border-bottom-left-radius: 20px;
+  box-shadow: -10px 10px 0px white;
 }
